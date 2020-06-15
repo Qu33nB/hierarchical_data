@@ -8,6 +8,20 @@
 <body>
     <h1>Qu33n B's Hierarchical Data</h1>
 
-    
+    {% load mptt_tags %}
+
+    <ul class="root">
+        {% recursetree data %}
+            <li>
+                {{ node.name }}
+                {% if not node.is_leaf_node %}
+                    <ul class="children">
+                        {{ children }}
+                    </ul>
+                {% endif %}
+            </li>
+        {% endrecursetree %}
+    </ul>
+
 </body>
 </html>

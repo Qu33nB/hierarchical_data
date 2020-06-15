@@ -9,4 +9,3 @@ class SignUpForm(forms.Form):
     password = forms.CharField(widget=forms.PasswordInput)
     display_name = forms.CharField(max_length=40)
     homepage = forms.URLField(max_length=200, required=False)
-    age = forms.IntegerField(required=False)
